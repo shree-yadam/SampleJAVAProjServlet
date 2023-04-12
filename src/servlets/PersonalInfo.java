@@ -31,15 +31,11 @@ public class PersonalInfo extends HttpServlet {
 		String lastName = request.getParameter("lastName");
 		String middleName = request.getParameter("middleName");
 		String gender = request.getParameter("gender");
-		System.out.println("First Name: " + firstName);
-		System.out.println("Middle Name: " + middleName);
-		System.out.println("Last Name: " + lastName);
-		System.out.println("Gender : " + gender);
 		ServletContext sc = getServletContext();
-		sc.setAttribute(firstName, firstName);
-		sc.setAttribute(middleName, middleName);
-		sc.setAttribute(lastName, lastName);
-		sc.setAttribute(gender, gender);
+		sc.setAttribute("firstName", firstName);
+		sc.setAttribute("middleName", middleName);
+		sc.setAttribute("lastName", lastName);
+		sc.setAttribute("gender", gender);
 		response.sendRedirect(request.getContextPath() + "/ContactInfo.html");
 	}
 
